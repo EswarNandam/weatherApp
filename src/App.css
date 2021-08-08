@@ -1,0 +1,34 @@
+.App {
+  text-align: center;
+}
+body {
+  background-color: lightgray;
+}
+
+.App {
+  font-family: sans-serif;
+  padding: 10px 30px;
+}
+
+.App > div {
+  text-align: center;
+}
+
+.slick-arrow {
+  top: 10px !important;
+}
+
+.slick-slide > div {
+  margin: 0 10px;
+}
+/* .slick-slide {
+  height: 300px !important;
+  width: 445px !important;
+} */
+.slick-list {
+  margin: 0 -10px;
+}
+
+.recharts-wrapper {
+  background-color: white;
+}
