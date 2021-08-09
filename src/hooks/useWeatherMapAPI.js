@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { API_HOST, API_KEY, promise } from '../helpers/utils';
 
@@ -29,6 +29,7 @@ const useWeatherMapApi = initialCity => {
         if (err) {
             setIsLoading(false);
             setData([]);
+            console.log(err);
             return setIsError(true);
         }
         const data = result.data;
@@ -41,7 +42,7 @@ const useWeatherMapApi = initialCity => {
                     date: day,
                     id: item.weather[0],
                     temperature: item.main.temp,
-                    celsiusTemp: (item.main.temp - 32) * (5 / 9),
+                    celsiusTemperature: (item.main.temp - 32) * (5 / 9),
                     day: new Date(item.dt_txt.replace(/-/g, "/")).getDay(),
                     hour: hour,
                 }
@@ -67,6 +68,7 @@ const useWeatherMapApi = initialCity => {
 
     useEffect(() => {
         fetchData(initialCity);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return {

@@ -16,7 +16,7 @@ const useeStyles = makeStyles({
         transition: 'all .5s ease-in-out',
     },
     selectedCard: {
-        transform: 'scale(1.1)',
+        transform: 'scale(1.03)',
         boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
     },
     bullet: {
@@ -36,7 +36,7 @@ function renderSlides(weatherData, selectedValue, currentIndex) {
     const classes = useeStyles();
     return (
         weatherData && weatherData.map((data, index) => (
-            <div>
+            <div key={index}>
                 <Card className={`${classes.root} ${currentIndex === index && classes.selectedCard}`}>
                     <CardContent className={classes.title}>
                         <div><b>Temp: </b>{selectedValue === 'celsius' ? `${Math.trunc(data.avgTempCelsius)} C` : `${Math.trunc(data.avgTemp)} F`}</div>

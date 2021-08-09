@@ -11,10 +11,10 @@ export default function BarChat({data, selectedValue}) {
             <XAxis dataKey="hour">
             <Label value="Time" offset={0} position="bottom" />
             </XAxis>
-            <YAxis dataKey={selectedValue === 'celsius' ? 'celsiusTemp' : 'temperature'} label={{ value: `Temperature (${selectedValue === 'celsius' ? 'C' : 'F'})`, angle: -90, position: 'left' }} />
+            <YAxis dataKey={selectedValue === 'celsius' ? 'celsiusTemperature' : 'temperature'} label={{ value: `Temperature (${selectedValue === 'celsius' ? 'C' : 'F'})`, angle: -90, position: 'left' }} />
             <CartesianGrid strokeDasharray="3 3" />
             <Tooltip />
-            <Bar dataKey={selectedValue === 'celsius' ? 'celsiusTemp' : 'temperature'} barSize={20} fill="#8884d8" />
+            <Bar dataKey={selectedValue === 'celsius' ? 'celsiusTemperature' : 'temperature'} barSize={20} fill="#8884d8" />
             <Legend align="right" verticalAlign="bottom"/>
         </BarChart>
     );

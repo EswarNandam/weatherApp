@@ -13,7 +13,7 @@ function App() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [selectedValue, setSelectedValue] = React.useState('fahrenheit');
     const [cityName, setCityName] = useState('Munich');
-    const { isLoading, data, isError, fetchData } = useOpenWeatherMapApi(cityName);
+    const { isLoading, data, fetchData } = useOpenWeatherMapApi(cityName);
 
     return (
         <div className="App">
